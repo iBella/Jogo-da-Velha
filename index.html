@@ -23,22 +23,66 @@
   <![endif]-->
 
   <!-- Add your site or application content here -->
-  <header>
-    <h1>Título da sua página ou webapp</h1>
-    <nav>Menu de navegação principal</nav>
-  </header>
-  <main>
-    <section>
-      Seu conteúdo ou feature principal vem aqui
-    </section>
-    <aside>
-      Algum conteúdo ou feature não-principal de apoio
-    </aside>
-  </main>
-  <footer>
-    Informações gerais, recursos secundários de apoio,
-    nome do autor.
-  </footer>
+
+  <h1 class="app-title">JOGO DA VELHA</h1>
+
+  <div>
+
+    <div class="column">
+      <img id="drag1" src="img/bolinha.png" draggable="true" ondragstart="drag(event)">
+      <img id="drag2" src="img/bolinha.png" draggable="true" ondragstart="drag(event)">
+      <img id="drag3" src="img/bolinha.png" draggable="true" ondragstart="drag(event)">
+      <img id="drag4" src="img/bolinha.png" draggable="true" ondragstart="drag(event)">
+      <img id="drag5" src="img/bolinha.png" draggable="true" ondragstart="drag(event)">
+    </div>
+
+    <div class="column">
+      <div class="row">
+        <div class="column">
+          <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+        <div class="column">
+          <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+        <div class="column">
+          <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+        <div class="column">
+          <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+        <div class="column">
+          <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+        <div class="column">
+          <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+        <div class="column">
+          <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <img id="drag6" src="img/xizinho.png" draggable="true" ondragstart="drag(event)">
+      <img id="drag7" src="img/xizinho.png" draggable="true" ondragstart="drag(event)">
+      <img id="drag8" src="img/xizinho.png" draggable="true" ondragstart="drag(event)">
+      <img id="drag9" src="img/xizinho.png" draggable="true" ondragstart="drag(event)">
+      <img id="drag10" src="img/xizinho.png" draggable="true" ondragstart="drag(event)">
+
+    </div>
+  </div>
+
+  <br>
 
   <script src="js/vendor/modernizr-3.7.1.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"

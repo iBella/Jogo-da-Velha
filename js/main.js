@@ -1,9 +1,13 @@
-function helloWorld() {
-    for (let i = 3; i > 0; i--) {
-        console.log(i);
-    }
-    console.log('...');
-    console.log('Hello World!');
+function allowDrop(ev) {
+    ev.preventDefault();
 }
 
-helloWorld();
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
