@@ -1,102 +1,112 @@
-<!doctype html>
-<html class="no-js" lang="">
+<!DOCTYPE html>
+<html lang="pt-br">
 
 <head>
-  <meta charset="utf-8">
-  <title>Porjeto Front-End</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Porjeto Front-End</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
 
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/output.css">
 
-  <meta name="theme-color" content="#fafafa">
+    <meta name="theme-color" content="#fafafa">
 </head>
 
 <body>
-  <!--[if IE]>
+    <!--[if IE]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
 
-  <!-- Add your site or application content here -->
+    <!-- Add your site or application content here -->
 
-  <h1 class="app-title">JOGO DA VELHA</h1>
+    <h1 class="app-title">JOGO DA VELHA</h1>
 
-  <div>
+    <div id="#jogo">
 
-    <div class="column">
-      <img id="drag1" src="img/bolinha.png" draggable="true" ondragstart="drag(event)">
-      <img id="drag2" src="img/bolinha.png" draggable="true" ondragstart="drag(event)">
-      <img id="drag3" src="img/bolinha.png" draggable="true" ondragstart="drag(event)">
-      <img id="drag4" src="img/bolinha.png" draggable="true" ondragstart="drag(event)">
-      <img id="drag5" src="img/bolinha.png" draggable="true" ondragstart="drag(event)">
+        <div class="column column__jogador1">
+            <img id="circulo1" src="img/bolinha.png" draggable="true" ondragstart="drag(event)">
+            <img id="circulo2" src="img/bolinha.png" draggable="true" ondragstart="drag(event)">
+            <img id="circulo3" src="img/bolinha.png" draggable="true" ondragstart="drag(event)">
+            <img id="circulo4" src="img/bolinha.png" draggable="true" ondragstart="drag(event)">
+            <img id="circulo5" src="img/bolinha.png" draggable="true" ondragstart="drag(event)">
+        </div>
+
+        <div class="column column__jogo">
+            <div class="row">
+                <div class="column column__velha">
+                    <div class="campo" id="campo1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </div>
+                <div class="column column__velha">
+                    <div class="campo" id="campo2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </div>
+                <div class="column column__velha">
+                    <div class="campo" id="campo3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column column__velha">
+                    <div class="campo velha" id="campo4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </div>
+                <div class="column column__velha">
+                    <div class="campo" id="campo5" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </div>
+                <div class="column column__velha">
+                    <div class="campo" id="campo6" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column column__velha">
+                    <div class="campo" id="campo7" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </div>
+                <div class="column column__velha">
+                    <div class="campo" id="campo8" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </div>
+                <div class="column column__velha">
+                    <div class="campo" id="campo9" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="column column__jogador2">
+            <img id="xis1" src="img/xizinho.png" draggable="true" ondragstart="drag(event)">
+            <img id="xis2" src="img/xizinho.png" draggable="true" ondragstart="drag(event)">
+            <img id="xis3" src="img/xizinho.png" draggable="true" ondragstart="drag(event)">
+            <img id="xis4" src="img/xizinho.png" draggable="true" ondragstart="drag(event)">
+            <img id="xis5" src="img/xizinho.png" draggable="true" ondragstart="drag(event)">
+        </div>
+
     </div>
 
-    <div class="column">
-      <div class="row">
-        <div class="column">
-          <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        </div>
-        <div class="column">
-          <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        </div>
-        <div class="column">
-          <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="column">
-          <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        </div>
-        <div class="column">
-          <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        </div>
-        <div class="column">
-          <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="column">
-          <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        </div>
-        <div class="column">
-          <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        </div>
-        <div class="column">
-          <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        </div>
-      </div>
-    </div>
+    <div id="resultado"></div>
 
-    <div class="column">
-      <img id="drag6" src="img/xizinho.png" draggable="true" ondragstart="drag(event)">
-      <img id="drag7" src="img/xizinho.png" draggable="true" ondragstart="drag(event)">
-      <img id="drag8" src="img/xizinho.png" draggable="true" ondragstart="drag(event)">
-      <img id="drag9" src="img/xizinho.png" draggable="true" ondragstart="drag(event)">
-      <img id="drag10" src="img/xizinho.png" draggable="true" ondragstart="drag(event)">
+    <br>
 
-    </div>
-  </div>
+    <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script>
+        window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')
+    </script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
 
-  <br>
-
-  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
-
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <script>
+        window.ga = function() {
+            ga.q.push(arguments)
+        };
+        ga.q = [];
+        ga.l = +new Date;
+        ga('create', 'UA-XXXXX-Y', 'auto');
+        ga('set', 'transport', 'beacon');
+        ga('send', 'pageview')
+    </script>
+    <script src="https://www.google-analytics.com/analytics.js" async></script>
 </body>
 
 </html>

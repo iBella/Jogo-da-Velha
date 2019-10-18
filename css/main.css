@@ -39,21 +39,3 @@ aside.secundary-feature {
     height: 85vh;
     color: #fff;
 }
-
-#div1 {
-    width: 120px;
-    height: 120px;
-    padding: 10px;
-    border: 1px solid #aaaaaa;
-}
-
-.column {
-    float: left;
-    width: 33.33%;
-}
-
-.row {
-    content: "";
-    display: table;
-    clear: both;
-}

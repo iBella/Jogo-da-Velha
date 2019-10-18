@@ -1,0 +1,38 @@
+body {
+  padding: 30px;
+}
+
+.column {
+  float: left;
+}
+.column__velha {
+  width: 33.33%;
+}
+.column__jogador1 {
+  width: 25%;
+}
+.column__jogador2 {
+  width: 25%;
+}
+.column__jogo {
+  width: 50%;
+}
+
+.row {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#jogo {
+  padding: 25px;
+}
+
+.campo {
+  width: 120px;
+  height: 120px;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+}
+
+/*# sourceMappingURL=output.css.map */
