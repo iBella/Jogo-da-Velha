@@ -1,9 +1,8 @@
-var vez = 1;
-var vencedor = "";
+const JOGADOR_1 = "1";
+const JOGADOR_2 = "2";
+const CAMINHO_IMAGEM_JOGADOR_1 = "img/bolinha.png";
 
-$(function(){
-    console.log('OK');
-});
+var vencedor = "";
 
 function allowDrop(ev) {
     ev.preventDefault();
@@ -15,7 +14,7 @@ function drag(ev) {
 
 function drop(ev) {
     ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
+    let data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
     verificarFimDeJogo();
 }
@@ -31,10 +30,10 @@ function camposIguais(a, b, c) {
        (campos[0].A != undefined )  &&
        (campos[0].A != "")){
 
-        if (campos[0].A.indexOf("img/bolinha.png") >= 0)
-            vencedor = "1";
+        if (campos[0].A.indexOf(CAMINHO_IMAGEM_JOGADOR_1) >= 0)
+            vencedor = JOGADOR_1;
         else
-            vencedor = "2";
+            vencedor = JOGADOR_2;
         return true;
 
     }
@@ -44,20 +43,23 @@ function camposIguais(a, b, c) {
 }
 
 function verificarFimDeJogo() {
-    if (camposIguais(1, 2, 3) ||
-        camposIguais(4, 5, 6) ||
-        camposIguais(7, 8, 9) ||
-        camposIguais(1, 4, 7) ||
-        camposIguais(2, 5, 8) ||
-        camposIguais(3, 6, 9) ||
-        camposIguais(1, 5, 9) ||
-        camposIguais(3, 5, 7)
-    ) {
-        var venceu = "<img src='img/jogador" + vencedor + ".png' >";
-        $("#resultado").html(venceu);
-    }
+    var jogada = [ 
+        [1,2,3], [4,5,6],
+        [7,8,9], [1,4,7], [2,5,8],
+        [3,6,9], [1,5,9], [3,5,7]
+    ];
+
+    jogada.forEach(function(jogo){
+        if(camposIguais(...jogo)){
+            $("#resultado").html(imagemVencedor());
+        }
+    });
 }
 
 function reiniciar() {
     document.location.reload(true);
+}
+
+function imagemVencedor(venceu = vencedor){
+    return `<img src='img/jogador${venceu}.png' >`;
 }
