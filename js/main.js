@@ -21,20 +21,24 @@ function drop(ev) {
 }
 
 function camposIguais(a, b, c) {
-    var bgA = $("#campo" + a).children().attr('src');;
-    var bgB = $("#campo" + b).children().attr('src');;
-    var bgC = $("#campo" + c).children().attr('src');;
-    if ((bgA == bgB) &&
-        (bgB == bgC) &&
-        (bgA != undefined &&
-            bgA != "")) {
+    var campos = new Array();
+    campos.push({"A": $("#campo" + a).children().attr('src')});
+    campos.push({"B": $("#campo" + b).children().attr('src')});
+    campos.push({"C": $("#campo" + c).children().attr('src')});
 
-        if (bgA.indexOf("img/bolinha.png") >= 0)
+    if((campos[0].A == campos[1].B) &&
+       (campos[1].B == campos[2].C) &&
+       (campos[0].A != undefined )  &&
+       (campos[0].A != "")){
+
+        if (campos[0].A.indexOf("img/bolinha.png") >= 0)
             vencedor = "1";
         else
             vencedor = "2";
         return true;
-    } else {
+
+    }
+    else {
         return false;
     }
 }
@@ -55,5 +59,5 @@ function verificarFimDeJogo() {
 }
 
 function reiniciar() {
-    console.log('reiniciando jogo');
+    document.location.reload(true);
 }
