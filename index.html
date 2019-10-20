@@ -27,17 +27,16 @@
 
     <h1 class="app-title">JOGO DA VELHA</h1>
 
-    <div id="#jogo">
-
-        <div class="column column__jogador1">
-            <img id="circulo1" src="img/bolinha.png" draggable="true" ondragstart="drag(event)">
-            <img id="circulo2" src="img/bolinha.png" draggable="true" ondragstart="drag(event)">
-            <img id="circulo3" src="img/bolinha.png" draggable="true" ondragstart="drag(event)">
-            <img id="circulo4" src="img/bolinha.png" draggable="true" ondragstart="drag(event)">
-            <img id="circulo5" src="img/bolinha.png" draggable="true" ondragstart="drag(event)">
+    
+    <div id="jogo">
+        
+        <div id="menu">
+            <button class="btn" type="button" onclick="reiniciar()">Iniciar Jogo</button>
+            <p><span>Jogador 1</span></p>
+            <p><span>Jogador 2</span></p>
         </div>
 
-        <div class="column column__jogo">
+        <div id="velha">
             <div class="row">
                 <div class="column column__velha">
                     <div class="campo" id="campo1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
@@ -73,17 +72,22 @@
             </div>
         </div>
 
-        <div class="column column__jogador2">
-            <img id="xis1" src="img/xizinho.png" draggable="true" ondragstart="drag(event)">
-            <img id="xis2" src="img/xizinho.png" draggable="true" ondragstart="drag(event)">
-            <img id="xis3" src="img/xizinho.png" draggable="true" ondragstart="drag(event)">
-            <img id="xis4" src="img/xizinho.png" draggable="true" ondragstart="drag(event)">
-            <img id="xis5" src="img/xizinho.png" draggable="true" ondragstart="drag(event)">
+        <div id="jogador">
+            <img class="peca" id="circulo1" src="img/bolinha.png" draggable="true" ondragstart="drag(event)">
+            <img class="peca" id="xis1" src="img/xizinho.png" draggable="true" ondragstart="drag(event)">
+            <img class="peca" id="circulo2" src="img/bolinha.png" draggable="true" ondragstart="drag(event)">
+            <img class="peca" id="xis2" src="img/xizinho.png" draggable="true" ondragstart="drag(event)">
+            <img class="peca" id="circulo3" src="img/bolinha.png" draggable="true" ondragstart="drag(event)">
+            <img class="peca" id="xis3" src="img/xizinho.png" draggable="true" ondragstart="drag(event)">
+            <img class="peca" id="circulo4" src="img/bolinha.png" draggable="true" ondragstart="drag(event)">
+            <img class="peca" id="xis4" src="img/xizinho.png" draggable="true" ondragstart="drag(event)">
+            <img class="peca" id="circulo5" src="img/bolinha.png" draggable="true" ondragstart="drag(event)">
+            <img class="peca" id="xis5" src="img/xizinho.png" draggable="true" ondragstart="drag(event)">
         </div>
 
-    </div>
+        <div id="resultado"></div>
 
-    <div id="resultado"></div>
+    </div>
 
     <br>
 

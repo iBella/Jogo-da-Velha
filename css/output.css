@@ -2,20 +2,31 @@ body {
   padding: 30px;
 }
 
+.btn {
+  background-color: blue;
+  border: none;
+  color: white;
+  padding: 15px 35px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.campo {
+  width: 120px;
+  height: 120px;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+}
+
 .column {
   float: left;
 }
 .column__velha {
   width: 33.33%;
-}
-.column__jogador1 {
-  width: 25%;
-}
-.column__jogador2 {
-  width: 25%;
-}
-.column__jogo {
-  width: 50%;
 }
 
 .row {
@@ -26,13 +37,31 @@ body {
 
 #jogo {
   padding: 25px;
+  text-align: center;
 }
-
-.campo {
-  width: 120px;
-  height: 120px;
-  padding: 10px;
-  border: 1px solid #aaaaaa;
+#jogo > #menu {
+  width: 20%;
+  position: absolute;
+  background: yellow;
+}
+#jogo > #velha {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 45%;
+}
+#jogo > #jogador {
+  width: 80%;
+  position: absolute;
+}
+#jogo > #jogador > .peca {
+  display: inline;
+  margin-left: -60px;
+  cursor: pointer;
+  padding-top: 25px;
+}
+#jogo > #resultado {
+  background: yellow;
 }
 
 /*# sourceMappingURL=output.css.map */

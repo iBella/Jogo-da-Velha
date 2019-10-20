@@ -1,20 +1,33 @@
+$preenchimento: 25px;
+
 body {
-    padding: 30px;
+    padding: $preenchimento + 5px;
+}
+
+.btn {
+    background-color: blue;
+    border: none;
+    color: white;
+    padding: 15px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.campo {
+    width: 120px;
+    height: 120px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
 }
 
 .column {
     float: left;
     &__velha {
         width: 33.33%;
-    }
-    &__jogador1 {
-        width: 25%;
-    }
-    &__jogador2 {
-        width: 25%;
-    }
-    &__jogo {
-        width: 50%;
     }
 }
 
@@ -25,12 +38,35 @@ body {
 }
 
 #jogo {
-    padding: 25px;
-}
+    padding: $preenchimento;
+    text-align: center;
 
-.campo {
-    width: 120px;
-    height: 120px;
-    padding: 10px;
-    border: 1px solid #aaaaaa;
+    &>#menu {
+        width: 20%;
+        position: absolute;
+        background: yellow;
+    }
+
+    &>#velha {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 45%;
+    }
+
+    &>#jogador {
+        width: 80%;
+        position: absolute;
+
+        &>.peca {
+            display: inline;
+            margin-left: -60px;
+            cursor: pointer;
+            padding-top: $preenchimento;
+        }
+    }
+
+    &>#resultado {
+        background: yellow;
+    }
 }
