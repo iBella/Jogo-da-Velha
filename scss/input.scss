@@ -2,6 +2,15 @@ $preenchimento: 25px;
 
 body {
     padding: $preenchimento + 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    background-image: url("../img/fundo.jpg");
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    padding: 20px;
+    z-index: -1;
 }
 
 .btn {
@@ -21,7 +30,9 @@ body {
     width: 120px;
     height: 120px;
     padding: 10px;
-    border: 1px solid #aaaaaa;
+    border: 3px solid #aaaaaa;
+    background-color: yellow;
+    opacity: 0.8;
 }
 
 .column {
@@ -48,25 +59,24 @@ body {
     }
 
     &>#velha {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 45%;
+        width: 60%;
+        padding-left: 30%;
+        position: absolute;
     }
 
     &>#jogador {
-        width: 80%;
-        position: absolute;
-
+        width: 20%;
+        padding-left: 70%;
+        
         &>.peca {
-            display: inline;
-            margin-left: -60px;
-            cursor: pointer;
-            padding-top: $preenchimento;
+            position: absolute;
         }
     }
 
     &>#resultado {
         background: yellow;
+        position: absolute;
+        bottom: 0px;
+        width: 93%;
     }
 }

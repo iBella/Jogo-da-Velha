@@ -48,6 +48,7 @@ function verificarFimDeJogo() {
         camposIguais(1, 5, 9) ||
         camposIguais(3, 5, 7)
     ) {
-        $("#resultado").html("<h1>O jogador " + vencedor + "venceu! </h1>");
+        var venceu = "<img src='img/jogador" + vencedor + ".png' >";
+        $("#resultado").html(venceu);
     }
 }

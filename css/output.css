@@ -1,5 +1,14 @@
 body {
   padding: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+  background-image: url("../img/fundo.jpg");
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  padding: 20px;
+  z-index: -1;
 }
 
 .btn {
@@ -19,7 +28,9 @@ body {
   width: 120px;
   height: 120px;
   padding: 10px;
-  border: 1px solid #aaaaaa;
+  border: 3px solid #aaaaaa;
+  background-color: yellow;
+  opacity: 0.8;
 }
 
 .column {
@@ -45,23 +56,22 @@ body {
   background: yellow;
 }
 #jogo > #velha {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 45%;
-}
-#jogo > #jogador {
-  width: 80%;
+  width: 60%;
+  padding-left: 30%;
   position: absolute;
 }
+#jogo > #jogador {
+  width: 20%;
+  padding-left: 70%;
+}
 #jogo > #jogador > .peca {
-  display: inline;
-  margin-left: -60px;
-  cursor: pointer;
-  padding-top: 25px;
+  position: absolute;
 }
 #jogo > #resultado {
   background: yellow;
+  position: absolute;
+  bottom: 0px;
+  width: 93%;
 }
 
 /*# sourceMappingURL=output.css.map */
