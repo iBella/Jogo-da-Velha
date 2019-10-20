@@ -13,17 +13,36 @@ body {
     z-index: -1;
 }
 
+.inicio {
+    text-align: left;
+    padding-left: $preenchimento;
+}
+
 .btn {
     background-color: blue;
     border: none;
     color: white;
-    padding: 15px 35px;
+    padding: 15px 80px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+}
+
+.placar {
+    font-size: 18px;
+    font-style: italic;
+    
+    &>img {
+        width: 40px;
+        height: 40px;
+        padding-right: $preenchimento;
+    }
+    &>span {
+        font-size: 28px;
+        font-weight: bold;
+    }
 }
 
 .campo {

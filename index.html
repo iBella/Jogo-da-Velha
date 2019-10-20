@@ -29,13 +29,15 @@
         <img src="img/titulo.png" >
     </h1>
 
+    <div class="inicio">
+        <button type="button" class="btn" onclick="reiniciar()">Iniciar Jogo</button>
+    </div>
     
     <div id="jogo">
 
         <div id="menu">
-            <button class="btn" type="button" onclick="reiniciar()">Iniciar Jogo</button>
-            <p><span>Jogador 1</span></p>
-            <p><span>Jogador 2</span></p>
+            <p class="placar"><img src="img/xizinho.png">Jogador 1: <span>0</span></p>
+            <p class="placar"><img src="img/bolinha.png">Jogador 2: <span>0</span></p>
         </div>
 
         <div id="velha">
@@ -84,7 +86,6 @@
             <img class="peca" id="circulo4" src="img/bolinha.png" draggable="true" ondragstart="drag(event)">
             <img class="peca" id="xis4" src="img/xizinho.png" draggable="true" ondragstart="drag(event)">
             <img class="peca" id="circulo5" src="img/bolinha.png" draggable="true" ondragstart="drag(event)">
-            <img class="peca" id="xis5" src="img/xizinho.png" draggable="true" ondragstart="drag(event)">
         </div>
 
         <div id="resultado"></div>

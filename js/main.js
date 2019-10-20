@@ -1,6 +1,10 @@
 var vez = 1;
 var vencedor = "";
 
+$(function(){
+    console.log('OK');
+});
+
 function allowDrop(ev) {
     ev.preventDefault();
 }
@@ -17,9 +21,6 @@ function drop(ev) {
 }
 
 function camposIguais(a, b, c) {
-    var campoA = $("#campo" + a);
-    var campoB = $("#campo" + b);
-    var campoC = $("#campo" + c);
     var bgA = $("#campo" + a).children().attr('src');;
     var bgB = $("#campo" + b).children().attr('src');;
     var bgC = $("#campo" + c).children().attr('src');;
@@ -51,4 +52,8 @@ function verificarFimDeJogo() {
         var venceu = "<img src='img/jogador" + vencedor + ".png' >";
         $("#resultado").html(venceu);
     }
+}
+
+function reiniciar() {
+    console.log('reiniciando jogo');
 }
