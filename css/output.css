@@ -37,10 +37,6 @@ body {
   height: 40px;
   padding-right: 25px;
 }
-.placar > span {
-  font-size: 28px;
-  font-weight: bold;
-}
 
 .campo {
   width: 120px;
