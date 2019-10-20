@@ -1,9 +1,8 @@
-var vez = 1;
-var vencedor = "";
+const JOGADOR_1 = "1";
+const JOGADOR_2 = "2";
+const CAMINHO_IMAGEM_JOGADOR_1 = "img/bolinha.png";
 
-$(function(){
-    console.log('OK');
-});
+var vencedor = "";
 
 function allowDrop(ev) {
     ev.preventDefault();
@@ -15,24 +14,24 @@ function drag(ev) {
 
 function drop(ev) {
     ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
+    let data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
     verificarFimDeJogo();
 }
 
 function camposIguais(a, b, c) {
-    var bgA = $("#campo" + a).children().attr('src');;
-    var bgB = $("#campo" + b).children().attr('src');;
-    var bgC = $("#campo" + c).children().attr('src');;
+    let bgA = $("#campo" + a).children().attr('src');
+    let bgB = $("#campo" + b).children().attr('src');
+    let bgC = $("#campo" + c).children().attr('src');
     if ((bgA == bgB) &&
         (bgB == bgC) &&
         (bgA != undefined &&
             bgA != "")) {
 
-        if (bgA.indexOf("img/bolinha.png") >= 0)
-            vencedor = "1";
+        if (bgA.indexOf(CAMINHO_IMAGEM_JOGADOR_1) >= 0)
+            vencedor = JOGADOR_1;
         else
-            vencedor = "2";
+            vencedor = JOGADOR_2;
         return true;
     } else {
         return false;
@@ -49,11 +48,14 @@ function verificarFimDeJogo() {
         camposIguais(1, 5, 9) ||
         camposIguais(3, 5, 7)
     ) {
-        var venceu = "<img src='img/jogador" + vencedor + ".png' >";
-        $("#resultado").html(venceu);
+        $("#resultado").html(imagemVencedor());
     }
 }
 
 function reiniciar() {
-    console.log('reiniciando jogo');
+    document.location.reload(true);
+}
+
+function imagemVencedor(venceu = vencedor){
+    return `<img src='img/jogador${venceu}.png' >`;
 }
