@@ -1,4 +1,5 @@
 $preenchimento: 25px;
+$amarelo: yellow;
 
 body {
     padding: $preenchimento + 5px;
@@ -31,7 +32,7 @@ body {
     height: 120px;
     padding: 10px;
     border: 3px solid #aaaaaa;
-    background-color: yellow;
+    background-color: $amarelo;
     opacity: 0.8;
 }
 
@@ -55,7 +56,7 @@ body {
     &>#menu {
         width: 20%;
         position: absolute;
-        background: yellow;
+        background: $amarelo;
     }
 
     &>#velha {
@@ -74,7 +75,7 @@ body {
     }
 
     &>#resultado {
-        background: yellow;
+        background: $amarelo;
         position: absolute;
         bottom: 0px;
         width: 93%;
