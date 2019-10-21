@@ -20,7 +20,7 @@ function drop(ev) {
 }
 
 function camposIguais(a, b, c) {
-    var campos = new Array();
+    let campos = new Array();
     campos.push({"A": $("#campo" + a).children().attr('src')});
     campos.push({"B": $("#campo" + b).children().attr('src')});
     campos.push({"C": $("#campo" + c).children().attr('src')});
@@ -43,11 +43,16 @@ function camposIguais(a, b, c) {
 }
 
 function verificarFimDeJogo() {
-    var jogada = [ 
-        [1,2,3], [4,5,6],
-        [7,8,9], [1,4,7], [2,5,8],
-        [3,6,9], [1,5,9], [3,5,7]
-    ];
+
+    let jogada =  new Set();
+    jogada.add([1,2,3]);
+    jogada.add([4,5,6]);
+    jogada.add([7,8,9]);
+    jogada.add([1,4,7]);
+    jogada.add([2,5,8]);
+    jogada.add([3,6,9]);
+    jogada.add([1,5,9]);
+    jogada.add([3,5,7]);
 
     jogada.forEach(function(jogo){
         if(camposIguais(...jogo)){
