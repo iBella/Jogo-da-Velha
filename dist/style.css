@@ -1,0 +1,89 @@
+body {
+  padding: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+  background-image: url(img/fundo.jpg);
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  padding: 20px;
+  z-index: -1;
+}
+
+.inicio {
+  text-align: left;
+  padding-left: 25px;
+}
+
+.btn {
+  background-color: blue;
+  border: none;
+  color: white;
+  padding: 15px 80px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.placar {
+  font-size: 18px;
+  font-style: italic;
+}
+.placar > img {
+  width: 40px;
+  height: 40px;
+  padding-right: 25px;
+}
+
+.campo {
+  width: 120px;
+  height: 120px;
+  padding: 10px;
+  border: 3px solid #aaaaaa;
+  background-color: yellow;
+  opacity: 0.8;
+}
+
+.column {
+  float: left;
+}
+.column__velha {
+  width: 33.33%;
+}
+
+.row {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#jogo {
+  padding: 25px;
+  text-align: center;
+}
+#jogo > #menu {
+  width: 20%;
+  position: absolute;
+  background: yellow;
+}
+#jogo > #velha {
+  width: 60%;
+  padding-left: 30%;
+  position: absolute;
+}
+#jogo > #jogador {
+  width: 20%;
+  padding-left: 70%;
+}
+#jogo > #jogador > .peca {
+  position: absolute;
+}
+#jogo > #resultado {
+  background: yellow;
+  position: absolute;
+  bottom: 0px;
+  width: 93%;
+}
