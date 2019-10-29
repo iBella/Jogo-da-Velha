@@ -1,4 +1,10 @@
-import './css/index.css'
+import './css/index.css';
+import './img/bolinha.png';
+import './img/jogador1.png';
+import './img/jogador2.png';
+import './img/titulo.png';
+import './img/xizinho.png';
+
 
 const JOGADOR_1 = "1";
 const JOGADOR_2 = "2";
@@ -6,26 +12,31 @@ const CAMINHO_IMAGEM_JOGADOR_1 = "img/bolinha.png";
 
 var vencedor = "";
 
-function allowDrop(ev) {
+window.allowDrop = function allowDrop(ev) {
     ev.preventDefault();
 }
 
-function drag(ev) {
+window.drag = function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
 }
 
-function drop(ev) {
+window.drop = function drop(ev) {
     ev.preventDefault();
     let data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
     verificarFimDeJogo();
 }
 
-function camposIguais(a, b, c) {
+window.camposIguais = function camposIguais(a, b, c) {
     let campos = new Array();
-    campos.push({"A": $("#campo" + a).children().attr('src')});
-    campos.push({"B": $("#campo" + b).children().attr('src')});
-    campos.push({"C": $("#campo" + c).children().attr('src')});
+
+    let aa = document.getElementById("campo" + a).children[0] != null && document.getElementById("campo" + a).children[0] != undefined ? document.getElementById("campo" + a).children[0].src : "";
+    let bb = document.getElementById("campo" + b).children[0] != null && document.getElementById("campo" + b).children[0] != undefined ? document.getElementById("campo" + b).children[0].src : "";
+    let cc = document.getElementById("campo" + c).children[0] != null && document.getElementById("campo" + c).children[0] != undefined ? document.getElementById("campo" + c).children[0].src : "";
+
+    campos.push({"A": aa});
+    campos.push({"B": bb});
+    campos.push({"C": cc});
 
     if((campos[0].A == campos[1].B) &&
        (campos[1].B == campos[2].C) &&
@@ -44,7 +55,7 @@ function camposIguais(a, b, c) {
     }
 }
 
-function verificarFimDeJogo() {
+window.verificarFimDeJogo = function verificarFimDeJogo() {
 
     let jogada =  new Set();
     jogada.add([1,2,3]);
@@ -58,15 +69,15 @@ function verificarFimDeJogo() {
 
     jogada.forEach(function(jogo){
         if(camposIguais(...jogo)){
-            $("#resultado").html(imagemVencedor());
+            document.getElementById("resultado").insertAdjacentHTML('beforeend', imagemVencedor());
         }
     });
 }
 
-function reiniciar() {
+window.reiniciar = function reiniciar() {
     document.location.reload(true);
-}
+};
 
-function imagemVencedor(venceu = vencedor){
-    return `<img src='img/jogador${venceu}.png' >`;
+window.imagemVencedor = function imagemVencedor(venceu = vencedor){
+    return `<img alt='vencedor' src='img/jogador${venceu}.png' >`;
 }
