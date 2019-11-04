@@ -69,17 +69,17 @@
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__css_index_css__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__css_index_css__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__css_index_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__css_index_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__img_bolinha_png__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__img_bolinha_png__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__img_bolinha_png___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__img_bolinha_png__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__img_jogador1_png__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__img_jogador1_png__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__img_jogador1_png___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__img_jogador1_png__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__img_jogador2_png__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__img_jogador2_png__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__img_jogador2_png___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__img_jogador2_png__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__img_titulo_png__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__img_titulo_png__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__img_titulo_png___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__img_titulo_png__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__img_xizinho_png__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__img_xizinho_png__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__img_xizinho_png___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__img_xizinho_png__);
 
 
@@ -95,26 +95,31 @@ const CAMINHO_IMAGEM_JOGADOR_1 = "img/bolinha.png";
 
 var vencedor = "";
 
-function allowDrop(ev) {
+window.allowDrop = function allowDrop(ev) {
     ev.preventDefault();
 }
 
-function drag(ev) {
+window.drag = function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
 }
 
-function drop(ev) {
+window.drop = function drop(ev) {
     ev.preventDefault();
     let data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
     verificarFimDeJogo();
 }
 
-function camposIguais(a, b, c) {
+window.camposIguais = function camposIguais(a, b, c) {
     let campos = new Array();
-    campos.push({"A": $("#campo" + a).children().attr('src')});
-    campos.push({"B": $("#campo" + b).children().attr('src')});
-    campos.push({"C": $("#campo" + c).children().attr('src')});
+
+    let aa = document.getElementById("campo" + a).children[0] != null && document.getElementById("campo" + a).children[0] != undefined ? document.getElementById("campo" + a).children[0].src : "";
+    let bb = document.getElementById("campo" + b).children[0] != null && document.getElementById("campo" + b).children[0] != undefined ? document.getElementById("campo" + b).children[0].src : "";
+    let cc = document.getElementById("campo" + c).children[0] != null && document.getElementById("campo" + c).children[0] != undefined ? document.getElementById("campo" + c).children[0].src : "";
+
+    campos.push({"A": aa});
+    campos.push({"B": bb});
+    campos.push({"C": cc});
 
     if((campos[0].A == campos[1].B) &&
        (campos[1].B == campos[2].C) &&
@@ -133,7 +138,7 @@ function camposIguais(a, b, c) {
     }
 }
 
-function verificarFimDeJogo() {
+window.verificarFimDeJogo = function verificarFimDeJogo() {
 
     let jogada =  new Set();
     jogada.add([1,2,3]);
@@ -147,82 +152,51 @@ function verificarFimDeJogo() {
 
     jogada.forEach(function(jogo){
         if(camposIguais(...jogo)){
-            $("#resultado").html(imagemVencedor());
+            document.getElementById("resultado").insertAdjacentHTML('beforeend', imagemVencedor());
         }
     });
 }
 
-module.exports = function reiniciar() {
+window.reiniciar = function reiniciar() {
     document.location.reload(true);
 };
 
-function imagemVencedor(venceu = vencedor){
-    return `<img src='img/jogador${venceu}.png' >`;
+window.imagemVencedor = function imagemVencedor(venceu = vencedor){
+    return `<img alt='vencedor' src='img/jogador${venceu}.png' >`;
 }
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)(module)))
 
 /***/ }),
 /* 1 */
 /***/ (function(module, exports) {
 
-module.exports = function(originalModule) {
-	if(!originalModule.webpackPolyfill) {
-		var module = Object.create(originalModule);
-		// module.parent = undefined by default
-		if(!module.children) module.children = [];
-		Object.defineProperty(module, "loaded", {
-			enumerable: true,
-			get: function() {
-				return module.l;
-			}
-		});
-		Object.defineProperty(module, "id", {
-			enumerable: true,
-			get: function() {
-				return module.i;
-			}
-		});
-		Object.defineProperty(module, "exports", {
-			enumerable: true,
-		});
-		module.webpackPolyfill = 1;
-	}
-	return module;
-};
-
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 3 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/bolinha.png";
 
 /***/ }),
-/* 4 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/jogador1.png";
 
 /***/ }),
-/* 5 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/jogador2.png";
 
 /***/ }),
-/* 6 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/titulo.png";
 
 /***/ }),
-/* 7 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/xizinho.png";

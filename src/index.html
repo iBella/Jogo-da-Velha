@@ -9,20 +9,28 @@
 </head>
 
 <body>
-    <h1 class="app-title">
-        <img alt="Titulo" src="img/titulo.png" >
-    </h1>
+    <div role="banner">
+        <header role="banner">
+            <h1 class="app-title">
+                <img alt="Titulo do Jogo da Velha em imagem" src="img/titulo.png">
+            </h1>
+        </header>
+    </div>
 
     <div class="inicio">
-        <button type="button" class="btn" onclick="reiniciar()">Iniciar Jogo</button>
+        <button type="button" role="button" aria-pressed="false" class="btn" onclick="reiniciar()">Iniciar Jogo</button>
     </div>
-    
+
     <div id="jogo">
 
+
         <div id="menu">
-            <p class="placar"><img alt="Imagem do jogador 1" id="test" src="img/bolinha.png">Jogador 1</p>
-            <p class="placar"><img alt="Imagem do jogador 2" src="img/xizinho.png">Jogador 2</p>
+            <p class="placar"><img alt="Imagem do Super Mario Bros representando o jogador 1"
+                    src="img/bolinha.png">Jogador 1</p>
+            <p class="placar"><img alt="Imagem do Rei Bowser Koopa representando o jogador 2"
+                    src="img/xizinho.png">Jogador 2</p>
         </div>
+
 
         <div id="velha">
             <div class="row">
@@ -38,7 +46,8 @@
             </div>
             <div class="row">
                 <div class="column column__velha">
-                    <div class="campo velha" id="campo4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    <div class="campo velha" id="campo4" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    </div>
                 </div>
                 <div class="column column__velha">
                     <div class="campo" id="campo5" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
@@ -61,21 +70,30 @@
         </div>
 
         <div id="jogador">
-            <img class="peca" id="circulo1" alt="Imagem do jogador 1" src="img/bolinha.png" draggable="true" ondragstart="drag(event)">
-            <img class="peca" id="xis1" alt="Imagem do jogador 2" src="img/xizinho.png" draggable="true" ondragstart="drag(event)">
-            <img class="peca" id="circulo2" alt="Imagem do jogador 1" src="img/bolinha.png" draggable="true" ondragstart="drag(event)">
-            <img class="peca" id="xis2" alt="Imagem do jogador 2" src="img/xizinho.png" draggable="true" ondragstart="drag(event)">
-            <img class="peca" id="circulo3" alt="Imagem do jogador 1" src="img/bolinha.png" draggable="true" ondragstart="drag(event)">
-            <img class="peca" id="xis3" alt="Imagem do jogador 2" src="img/xizinho.png" draggable="true" ondragstart="drag(event)">
-            <img class="peca" id="circulo4" alt="Imagem do jogador 1" src="img/bolinha.png" draggable="true" ondragstart="drag(event)">
-            <img class="peca" id="xis4" alt="Imagem do jogador 2" src="img/xizinho.png" draggable="true" ondragstart="drag(event)">
-            <img class="peca" id="circulo5" alt="Imagem do jogador 1" src="img/bolinha.png" draggable="true" ondragstart="drag(event)">
+            <img class="peca" id="circulo1" alt="Imagem do Super Mario Bros representando o jogador 1"
+                src="img/bolinha.png" draggable="true" ondragstart="drag(event)">
+            <img class="peca" id="xis1" alt="Imagem do Rei Bowser Koopa representando o jogador 2" src="img/xizinho.png"
+                draggable="true" ondragstart="drag(event)">
+            <img class="peca" id="circulo2" alt="Imagem do Super Mario Bros representando o jogador 1"
+                src="img/bolinha.png" draggable="true" ondragstart="drag(event)">
+            <img class="peca" id="xis2" alt="Imagem do Rei Bowser Koopa representando o jogador 2" src="img/xizinho.png"
+                draggable="true" ondragstart="drag(event)">
+            <img class="peca" id="circulo3" alt="Imagem do Super Mario Bros representando o jogador 1"
+                src="img/bolinha.png" draggable="true" ondragstart="drag(event)">
+            <img class="peca" id="xis3" alt="Imagem do Rei Bowser Koopa representando o jogador 2" src="img/xizinho.png"
+                draggable="true" ondragstart="drag(event)">
+            <img class="peca" id="circulo4" alt="Imagem do Super Mario Bros representando o jogador 1"
+                src="img/bolinha.png" draggable="true" ondragstart="drag(event)">
+            <img class="peca" id="xis4" alt="Imagem do Rei Bowser Koopa representando o jogador 2" src="img/xizinho.png"
+                draggable="true" ondragstart="drag(event)">
+            <img class="peca" id="circulo5" alt="Imagem do Super Mario Bros representando o jogador 1"
+                src="img/bolinha.png" draggable="true" ondragstart="drag(event)">
         </div>
 
         <div id="resultado"></div>
 
     </div>
-    
+
 </body>
 
 </html>
